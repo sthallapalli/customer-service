@@ -1,0 +1,26 @@
+project:
+  name: customer-service
+  version: 0.1
+  description: A customer service
+spring:
+  datasource:
+    url: jdbc:h2:mem:customer
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    initialization-mode: embedded
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
