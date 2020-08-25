@@ -1,5 +1,4 @@
-# ReadMe
-## customer-service
+# customer-service
 This service provides endpoints for authentication based on JWT and for customer profile data criteria based retrieve, update.
 
 ### Technology Stack
@@ -39,11 +38,11 @@ Following are the two options to run the server.
 
 Following are the two options to test the service
 
-###Postman
+### Postman
 * Please import the postman collection from project to perform operations. 
 * Please use the latest jwt token from authentication endpoint for calling customer profile apis.
 
-###Curl
+### Curl
 **Requires JQ json parsing tool installation**
 
 - Run **$PROJECT_HOME/bin/customer-service.sh** script from project home. It will display all operations.
