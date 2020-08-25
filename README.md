@@ -30,7 +30,7 @@ Following are the two options to run the server.
     
          **docker run --publish 9000:8080  --name customerservice customer-service:1.0**
          
-## Prerequisite Data
+### Prerequisite Data
 
 - On server startup the following five customer from **$PROJECT_HOME/resources/schema.sql** will be available in DB
 
