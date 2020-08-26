@@ -63,7 +63,7 @@ public class JwtAuthenticationFilterTest {
 
 
     @Test
-    public void testFailNoAuthorizationHeader() {
+    public void testFailNoAuthorizationHeader() throws Exception {
 
         when(customerDetailsService.loadUserByUsername(anyString()))
                 .thenReturn(new CustomerDetails(new Customer().setFirstName("test")
@@ -75,12 +75,14 @@ public class JwtAuthenticationFilterTest {
         assertThat(SecurityContextHolder.getContext().getAuthentication()).isNull();
         FilterChain chain = mock(FilterChain.class);
 
+        jwtAuthenticationFilter.doFilter(request, new MockHttpServletResponse(), chain);
+
         assertThat(SecurityContextHolder.getContext().getAuthentication()).isNull();
 
     }
 
     @Test
-    public void testFailNoUserFound() {
+    public void testFailNoUserFound() throws Exception {
 
         when(customerDetailsService.loadUserByUsername("test"))
                 .thenThrow(new UsernameNotFoundException("User not found"));
@@ -90,6 +92,8 @@ public class JwtAuthenticationFilterTest {
 
         assertThat(SecurityContextHolder.getContext().getAuthentication()).isNull();
         FilterChain chain = mock(FilterChain.class);
+
+        jwtAuthenticationFilter.doFilter(request, new MockHttpServletResponse(), chain);
 
         assertThat(SecurityContextHolder.getContext().getAuthentication()).isNull();
     }

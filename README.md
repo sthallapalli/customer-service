@@ -50,3 +50,4 @@ Following are the two options to test the service
 
 ### Test results
 - Please check **postman-results.docx** file from project home for sample test results
+- The integration tests also represents the test results.
